@@ -1,0 +1,11 @@
+.button-Cal {
+  width: 65px;
+  height: 3rem;
+  font-size: 1.25rem;
+}
+
+.btn-nonclick {
+  pointer-events: none;     
+  opacity: 1 !important;    
+  cursor: not-allowed !important; 
+}
