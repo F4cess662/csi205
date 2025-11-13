@@ -2,9 +2,8 @@ import { Button } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 
 const AppNavbar = ({ products, carts, setToken }) => {
-  const location = useLocation(); // ใช้เพื่อเช็ค URL ปัจจุบัน
+  const location = useLocation();
 
-  // ฟังก์ชันช่วยสำหรับตรวจสอบว่า URL ปัจจุบันตรงกับ path หรือไม่
   const isActive = (path) => (location.pathname === path ? "active" : "");
 
   return (
@@ -41,7 +40,10 @@ const AppNavbar = ({ products, carts, setToken }) => {
           </Button>
         </Link>
         <Link to="carts">
-          <Button variant="outline-light" className={isActive("/carts")}>
+          <Button
+            variant="outline-light"
+            className={`position-relative ${isActive("/carts")}`}
+          >
             Carts
             {carts.length > 0 && (
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
