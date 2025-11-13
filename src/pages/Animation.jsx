@@ -1,4 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
+import Basketball from "../assets/img/basketball.png";
+import Football from "../assets/img/football.png";
+import Volley from "../assets/img/volleyball.png";
+import Cartoon from "../assets/img/cartoon.png";
+import Logo from "../assets/img/logo.png";
+import Profile from "../assets/img/human.png";
+import Background from "../assets/img/field.jpg";
 
 const Animation = () => {
   const [ballType, setBallType] = useState(0);
@@ -18,22 +25,22 @@ const Animation = () => {
   const positionRef = useRef({ x: 0, y: 0 });
 
   const ballImages = {
-    1: "./src/assets/img/basketball.png", // Basketball
-    2: "./src/assets/img/football.png", // Football
-    3: "./src/assets/img/volleyball.png", // Volleyball
-    4: "./src/assets/img/human.png", // Human
-    5: "./src/assets/img/cartoon.png", // Cartoon
-    6: "./src/assets/img/logo.png", // Logo
+    1: Basketball, // Basketball
+    2: Football, // Football
+    3: Volley, // Volleyball
+    4: Profile, // Human
+    5: Cartoon, // Cartoon
+    6: Logo, // Logo
   };
 
   const ballLabels = {
-    0: 'None',
-    1: 'Basketball',
-    2: 'Football',
-    3: 'Volleyball',
-    4: 'Human',
-    5: 'Cartoon',
-    6: 'Logo'
+    0: "None",
+    1: "Basketball",
+    2: "Football",
+    3: "Volleyball",
+    4: "Human",
+    5: "Cartoon",
+    6: "Logo",
   };
 
   useEffect(() => {
@@ -69,20 +76,20 @@ const Animation = () => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key >= '0' && e.key <= '6') {
+      if (e.key >= "0" && e.key <= "6") {
         setBallType(parseInt(e.key));
-      } else if (e.key === ' ') {
+      } else if (e.key === " ") {
         e.preventDefault();
-        setRunning(prev => !prev);
+        setRunning((prev) => !prev);
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   const handleRunClick = () => {
-    setRunning(prev => !prev);
+    setRunning((prev) => !prev);
   };
 
   const handleBallTypeClick = (type) => {
@@ -101,7 +108,7 @@ const Animation = () => {
             width: `${boxWidth}px`,
             height: `${boxHeight}px`,
             backgroundColor: "#d4d4d4",
-            backgroundImage: "url(./src/assets/img/field.jpg)",
+            backgroundImage: `url(${Background})`, 
             backgroundPosition: "center",
             backgroundSize: "cover",
             margin: "0 auto",
@@ -211,5 +218,3 @@ const Animation = () => {
 };
 
 export default Animation;
-
-//backgroundColor

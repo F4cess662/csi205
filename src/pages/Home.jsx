@@ -1,10 +1,12 @@
+import Profile from "../assets/img/human.png"
+
 const Home = () => {
   return (
     <div>
       <div>
         <img
           className="w-25 h-25 d-block mx-auto mt-2"
-          src="./src/assets/img/human.png"
+          src={Profile}
           alt=""
         />
       </div>
